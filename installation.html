@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Installation de Kali Linux - KaliLinux Study</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Apprenez à installer Kali Linux avec WSL2, VirtualBox, ou clé USB bootable.">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      font-family: 'Cairo', sans-serif;
+      background-color: #0a0a19;
+      color: white;
+      padding-top: 70px;
+    }
+
+    h1, h2 {
+      color: #00d8ff;
+    }
+
+    .navbar {
+      background-color: #0d0d2b;
+    }
+
+    .navbar-brand span {
+      color: #00d8ff;
+      font-weight: 700;
+    }
+
+    .section-title {
+      margin-top: 40px;
+    }
+
+    a.link-light {
+      color: #00d8ff;
+      text-decoration: underline;
+    }
+
+    footer {
+      background-color: #0d0d2b;
+      padding: 20px 0;
+      text-align: center;
+      color: #aaa;
+      margin-top: 60px;
+    }
+
+    code {
+      background-color: #1a1a2e;
+      padding: 2px 6px;
+      border-radius: 5px;
+      color: #00ffcc;
+    }
+  </style>
+</head>
+<body>
+
+<nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+  <div class="container">
+    <a class="navbar-brand" href="index.html">
+      <img src="images/kali-logo.png" width="40" height="40" alt="Kali">
+      <span class="ms-2">KaliLinux Study</span>
+    </a>
+  </div>
+</nav>
+
+<div class="container">
+  <h1 class="text-center mt-4">🛠️ Installation de Kali Linux</h1>
+
+  <!-- WSL2 Section -->
+  <div class="section-title">
+    <h2>🔧 1. Installation via WSL2 + Interface Graphique (GUI)</h2>
+    <p>Installez Kali Linux directement sur Windows sans machine virtuelle grâce à <strong>WSL2</strong> :</p>
+
+    <ol>
+      <li>Ouvrez PowerShell en mode administrateur</li>
+      <li>Activez WSL et la plateforme de machine virtuelle :
+        <br><code>dism.exe /online /enable-feature /featurename:Microsoft-Windows-Subsystem-Linux /all /norestart</code><br>
+        <code>dism.exe /online /enable-feature /featurename:VirtualMachinePlatform /all /norestart</code>
+      </li>
+      <li>Redémarrez votre PC</li>
+      <li>Installez Kali Linux :
+        <br><code>wsl --install -d kali-linux</code>
+      </li>
+      <li>Configurez la GUI :
+        <br>Une fois Kali installé, ouvrez-le et tapez :
+        <br><code>sudo apt update && sudo apt install xfce4 xfce4-goodies xrdp -y</code>
+        <br><code>sudo systemctl enable xrdp && sudo systemctl start xrdp</code>
+        <br>Créez un mot de passe :
+        <br><code>sudo passwd root</code>
+        <br>Ensuite, utilisez le <strong>Bureau à distance Windows</strong> avec l'adresse <code>localhost:3389</code> et connectez-vous en tant que root.
+      </li>
+    </ol>
+  </div>
+
+  <!-- VirtualBox Section -->
+  <div class="section-title">
+    <h2>💻 2. Utilisation avec Oracle VirtualBox</h2>
+    <p>Faites fonctionner Kali Linux dans une machine virtuelle facilement :</p>
+    <ul>
+      <li>Téléchargez et installez <a class="link-light" href="https://www.virtualbox.org/wiki/Downloads" target="_blank">Oracle VirtualBox</a></li>
+      <li>Téléchargez l'image ISO de Kali Linux depuis le site officiel : <a class="link-light" href="https://www.kali.org/get-kali/" target="_blank">kali.org/get-kali</a></li>
+      <li>Créez une nouvelle VM dans VirtualBox :
+        <ul>
+          <li>Système : Linux / Debian 64-bit</li>
+          <li>RAM : minimum 2 Go</li>
+          <li>Disque dur : dynamique, 20 Go ou plus</li>
+        </ul>
+      </li>
+      <li>Lancez l’ISO et suivez le processus d'installation standard.</li>
+    </ul>
+  </div>
+
+  <!-- USB Bootable Section -->
+  <div class="section-title">
+    <h2>💾 3. Installation via Clé USB bootable</h2>
+    <p>Idéal pour tester ou installer Kali sur un vrai PC :</p>
+    <ul>
+      <li>Téléchargez l’image ISO de Kali Linux : <a class="link-light" href="https://www.kali.org/get-kali/" target="_blank">kali.org/get-kali</a></li>
+      <li>Téléchargez <strong>Rufus</strong> : <a class="link-light" href="https://rufus.ie/fr/" target="_blank">rufus.ie</a></li>
+      <li>Insérez une clé USB (min. 8 Go), ouvrez Rufus et :
+        <ul>
+          <li>Sélectionnez l’ISO de Kali</li>
+          <li>Système de fichiers : FAT32</li>
+          <li>Cliquez sur "Démarrer"</li>
+        </ul>
+      </li>
+      <li>Démarrez votre ordinateur sur la clé USB via le BIOS/UEFI</li>
+      <li>Choisissez <strong>Live</strong> pour tester, ou <strong>Install</strong> pour installer définitivement Kali</li>
+    </ul>
+  </div>
+</div>
+
+<footer>
+  <div class="container">
+    <p>&copy; 2025 KaliLinux Study. Tous droits réservés.</p>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <title>Outils Kali Linux - Utilisation</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+  <style>
+    body {
+      background-color: #0a0a19;
+      color: #fff;
+      font-family: 'Segoe UI', sans-serif;
+      padding-top: 60px;
+    }
+    h1 {
+      color: #00d8ff;
+      text-align: center;
+      margin-bottom: 40px;
+    }
+    .tool-card {
+      background-color: #1a1a2e;
+      border: none;
+      border-radius: 10px;
+      padding: 20px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(0, 216, 255, 0.2);
+    }
+    .tool-logo {
+      width: 50px;
+      height: 50px;
+      margin-right: 15px;
+    }
+    .tool-header {
+      display: flex;
+      align-items: center;
+      margin-bottom: 15px;
+    }
+    a.tool-pdf {
+      color: #00d8ff;
+      font-weight: bold;
+      text-decoration: underline;
+    }
+    .btn-top {
+      background-color: #00d8ff;
+      color: #0a0a19;
+      font-weight: bold;
+      border: none;
+      padding: 8px 16px;
+      margin-bottom: 30px;
+      border-radius: 6px;
+    }
+    .btn-top:hover {
+      background-color: #009dcf;
+      color: white;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🔧 Top 10 Outils Kali Linux</h1>
+
+    <!-- Nmap -->
+    <div class="tool-card">
+      <div class="tool-header">
+        <h4>Nmap</h4>
+      </div>
+      <p>Outil de scan de ports et détection de services sur un réseau.</p>
+      <p><strong>Installation :</strong> <code>sudo apt install nmap</code></p>
+      <p><strong>Utilisation :</strong> <code>nmap -sV 192.168.1.1</code></p>
+      <a class="tool-pdf" href="pdfs/nmap.pdf" target="_blank">📄 Voir le guide complet (PDF)</a>
+    </div>
+
+    <!-- Wireshark -->
+    <div class="tool-card">
+      <div class="tool-header">
+        <h4>Wireshark</h4>
+      </div>
+      <p>Analyseur de paquets réseau pour inspecter le trafic en détail.</p>
+      <p><strong>Installation :</strong> <code>sudo apt install wireshark</code></p>
+      <p><strong>Utilisation :</strong> Lancer : <code>wireshark</code></p>
+      <a class="tool-pdf" href="pdfs/wireshark.pdf" target="_blank">📄 Voir le guide complet (PDF)</a>
+    </div>
+
+    <!-- Metasploit -->
+    <div class="tool-card">
+      <div class="tool-header">
+        <h4>Metasploit</h4>
+      </div>
+      <p>Framework puissant pour développer et exécuter des exploits sur des machines vulnérables.</p>
+      <p><strong>Installation :</strong> <code>sudo apt install metasploit-framework</code></p>
+      <p><strong>Utilisation :</strong> <code>msfconsole</code></p>
+      <a class="tool-pdf" href="pdfs/metasploit.pdf" target="_blank">📄 Voir le guide complet (PDF)</a>
+    </div>
+
+    <!-- John the Ripper -->
+    <div class="tool-card">
+      <div class="tool-header">
+        <h4>John the Ripper</h4>
+      </div>
+      <p>Crackeur de mots de passe performant, utile pour tester la robustesse des mots de passe.</p>
+      <p><strong>Installation :</strong> <code>sudo apt install john</code></p>
+      <p><strong>Utilisation :</strong> <code>john hash.txt</code></p>
+      <a class="tool-pdf" href="pdfs/john.pdf" target="_blank">📄 Voir le guide complet (PDF)</a>
+    </div>
+
+    <!-- Hydra -->
+    <div class="tool-card">
+      <div class="tool-header">
+        <h4>Hydra</h4>
+      </div>
+      <p>Outil de force brute pour tester la sécurité des services réseau (SSH, FTP, HTTP...).</p>
+      <p><strong>Installation :</strong> <code>sudo apt install hydra</code></p>
+      <p><strong>Utilisation :</strong> <code>hydra -l admin -P wordlist.txt 192.168.1.1 ssh</code></p>
+      <a class="tool-pdf" href="pdfs/hydra.pdf" target="_blank">📄 Voir le guide complet (PDF)</a>
+    </div>
+
+    <!-- Burp Suite -->
+    <div class="tool-card">
+      <div class="tool-header">
+        <h4>Burp Suite</h4>
+      </div>
+      <p>Suite de tests pour applications web, utilisée pour détecter les vulnérabilités.</p>
+      <p><strong>Installation :</strong> Déjà installée sur Kali. Sinon : <code>sudo apt install burpsuite</code></p>
+      <p><strong>Utilisation :</strong> <code>burpsuite</code></p>
+      <a class="tool-pdf" href="pdfs/burp.pdf" target="_blank">📄 Voir le guide complet (PDF)</a>
+    </div>
+
+    <!-- Aircrack-ng -->
+    <div class="tool-card">
+      <div class="tool-header">
+        <h4>Aircrack-ng</h4>
+      </div>
+      <p>Outil pour tester la sécurité des réseaux Wi-Fi (crack de clés WEP/WPA).</p>
+      <p><strong>Installation :</strong> <code>sudo apt install aircrack-ng</code></p>
+      <p><strong>Utilisation :</strong> <code>aircrack-ng capture.cap</code></p>
+      <a class="tool-pdf" href="pdfs/aircrack.pdf" target="_blank">📄 Voir le guide complet (PDF)</a>
+    </div>
+
+    <!-- SQLmap -->
+    <div class="tool-card">
+      <div class="tool-header">
+        <h4>SQLmap</h4>
+      </div>
+      <p>Outil d’automatisation de détection et d’exploitation de failles SQLi (injections SQL).</p>
+      <p><strong>Installation :</strong> <code>sudo apt install sqlmap</code></p>
+      <p><strong>Utilisation :</strong> <code>sqlmap -u "http://site.com/page.php?id=1" --dbs</code></p>
+      <a class="tool-pdf" href="pdfs/sqlmap.pdf" target="_blank">📄 Voir le guide complet (PDF)</a>
+    </div>
+
+    <!-- Nikto -->
+    <div class="tool-card">
+      <div class="tool-header">
+        <h4>Nikto</h4>
+      </div>
+      <p>Scanner de vulnérabilités pour serveurs web.</p>
+      <p><strong>Installation :</strong> <code>sudo apt install nikto</code></p>
+      <p><strong>Utilisation :</strong> <code>nikto -h http://site.com</code></p>
+      <a class="tool-pdf" href="pdfs/nikto.pdf" target="_blank">📄 Voir le guide complet (PDF)</a>
+    </div>
+
+    <!-- Netcat -->
+    <div class="tool-card">
+      <div class="tool-header">
+        <h4>Netcat</h4>
+      </div>
+      <p>Outil polyvalent pour établir des connexions réseau, utile en reverse shells et debugging.</p>
+      <p><strong>Installation :</strong> <code>sudo apt install netcat</code></p>
+      <p><strong>Utilisation :</strong> <code>nc -lvnp 4444</code></p>
+      <a class="tool-pdf" href="pdfs/netcat.pdf" target="_blank">📄 Voir le guide complet (PDF)</a>
+    </div>
+
+    <div class="text-center mt-5">
+      <a href="cours.html" class="btn btn-top">⬅ Retour aux cours</a>
+    </div>
+  </div>
+</body>
+</html>
